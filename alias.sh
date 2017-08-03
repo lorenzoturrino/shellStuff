@@ -11,5 +11,5 @@ alias mami='manage.py migrate'
 alias my='mysql -p'
 
 # git stuff
-alias glp='git pull origin `git rev-parse --abbrev-ref HEAD`'
-alias gup='git push origin `git rev-parse --abbrev-ref HEAD`'
+alias glp='git pull ${1:-origin} `git rev-parse --abbrev-ref HEAD`'
+alias gup='git push ${1:-origin} `git rev-parse --abbrev-ref HEAD`'
