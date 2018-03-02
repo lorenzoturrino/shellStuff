@@ -6,3 +6,9 @@
 
 # Node
 npm-debug.log
+
+# Virtualenv
+env
+
+# VSCode
+.vscode
