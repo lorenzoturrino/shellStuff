@@ -10,5 +10,8 @@ npm-debug.log
 # Virtualenv
 env
 
+# Python
+.py[cod]
+
 # VSCode
 .vscode
