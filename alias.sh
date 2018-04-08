@@ -10,6 +10,9 @@ alias mami='manage.py migrate'
 # mysql i hate you
 alias my='mysql -p'
 
+# serial monitor
+alias seop='screen /dev/ttyUSB0 115200'
+
 # git stuff
 function glp {
   git pull ${1:-origin} `git rev-parse --abbrev-ref HEAD`
