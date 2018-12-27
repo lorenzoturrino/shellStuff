@@ -1,8 +1,10 @@
-# python and django
+# python
 function senv {
   source ${1:-env}/bin/activate
 }
 alias denv='deactivate'
+
+# django
 alias rserv='manage.py runserver'
 alias mama='manage.py makemigrations'
 alias mami='manage.py migrate'
@@ -11,6 +13,7 @@ alias mami='manage.py migrate'
 alias my='mysql -p'
 
 # serial monitor
+alias xopen='xdg-open'
 alias seop='screen /dev/ttyUSB0 115200'
 
 # git stuff
@@ -24,4 +27,9 @@ function gup {
 
 function gco {
   git checkout ${1:--}
+}
+
+# pass
+function genpass {
+  </dev/urandom tr -dc 'A-Za-z0-9!"#$%&'\''()*+,-./:;<=>?@[\]^_`{|}~' | head -c ${1:-32}  ; echo
 }
