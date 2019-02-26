@@ -29,6 +29,8 @@ function gco {
   git checkout ${1:--}
 }
 
+alias gitclear="git branch | grep -v \"master\" | xargs git branch -D"
+
 # pass
 function genpass {
   </dev/urandom tr -dc 'A-Za-z0-9!"#$%&'\''()*+,-./:;<=>?@[\]^_`{|}~' | head -c ${1:-32}  ; echo
