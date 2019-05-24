@@ -35,3 +35,13 @@ alias gitclear="git branch | grep -v \"master\" | xargs git branch -D"
 function genpass {
   </dev/urandom tr -dc 'A-Za-z0-9!"#$%&'\''()*+,-./:;<=>?@[\]^_`{|}~' | head -c ${1:-32}  ; echo
 }
+
+# vpn
+function vpn {
+  sudo systemctl ${1:-restart} openvpn@client
+  sleep 4
+  curl ifconfig.me
+}
+
+# kube
+alias kk=kubectl
