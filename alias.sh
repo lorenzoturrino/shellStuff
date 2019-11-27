@@ -9,9 +9,6 @@ alias rserv='manage.py runserver'
 alias mama='manage.py makemigrations'
 alias mami='manage.py migrate'
 
-# mysql i hate you
-alias my='mysql -p'
-
 # serial monitor
 alias xopen='xdg-open'
 alias seop='screen /dev/ttyUSB0 115200'
@@ -29,7 +26,25 @@ function gco {
   git checkout ${1:--}
 }
 
+function gcr {
+  if [ -z "$1" ]; then
+    echo "please supply the name for the new branch"
+    return 1
+  fi
+
+  git checkout -b $1
+}
+
 alias gitclear="git branch | grep -v \"master\" | xargs git branch -D"
+
+# kube helpers
+function kpodnames {
+  kubectl get pods $2 | grep $1 | awk '{ print $1}'
+}
+
+function kpoddelete {
+  kubectl get pods $2 | grep $1 | awk '{ print $1}' | xargs -n1 -I% kubectl delete pod % $2
+}
 
 # pass
 function genpass {
